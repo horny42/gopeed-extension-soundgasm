@@ -1,0 +1,30 @@
+{
+  "name": "soundgasm",
+  "author": "horny42",
+  "title": "Soundgasm Downloader",
+  "description": "Download single audio or all audios from a soundgasm.net user profile (e.g. https://soundgasm.net/u/user/audio or https://soundgasm.net/u/user/)",
+  "icon": "",
+  "version": "0.1.0",
+  "homepage": "",
+  "repository": {
+    "url": "https://github.com/horny42/gopeed-extension-soundgasm"
+  },
+  "scripts": [
+    {
+      "event": "onResolve",
+      "match": {
+        "urls": ["*://soundgasm.net/u/*", "*://*.soundgasm.net/u/*"]
+      },
+      "entry": "dist/index.js"
+    }
+  ],
+  "settings": [
+    {
+      "name": "concurrency",
+      "title": "Profile resolve concurrency",
+      "description": "How many track pages to fetch in parallel when resolving a user profile (1-10)",
+      "type": "number",
+      "value": "5"
+    }
+  ]
+}
